@@ -96,7 +96,7 @@ export default function JwtLogin() {
               >
                 {({ values, errors, touched, handleChange, handleBlur, handleSubmit }) => (
                   <form onSubmit={handleSubmit}>
-                    <h2 style={{marginBottom:'20px', textAlign:'center', textDecoration:'underline', fontWeight:'bold', color:'darkblue'}}>Vendor Login</h2>
+                    <h2 style={{ marginBottom: '20px', textAlign: 'center', textDecoration: 'underline', fontWeight: 'bold', color: 'darkblue' }}>Vendor Login</h2>
                     <TextField
                       fullWidth
                       size="small"
@@ -155,7 +155,7 @@ export default function JwtLogin() {
                       variant="contained"
                       sx={{ my: 2 }}
                     >
-                      <NavLink to="/dashboard/default" style={{ color: "white", marginLeft: 5 }}>
+                      <NavLink to="/VendorDashboard" style={{ color: "white", marginLeft: 5 }}>
                         Login
                       </NavLink>
                     </LoadingButton>

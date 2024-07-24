@@ -59,15 +59,15 @@ export default function JwtRegister() {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
 
-  const handleFormSubmit = (values) => {
+  const handleFormSubmit = async (values) => {
     setLoading(true);
 
     try {
-      register(values.email, values.username, values.password);
-      navigate("/");
-      setLoading(false);
+      await register(values.email, values.username, values.password);
+      navigate("/session/VendorSignin"); // Redirect to login page after successful registration
     } catch (e) {
       console.log(e);
+    } finally {
       setLoading(false);
     }
   };
@@ -94,7 +94,7 @@ export default function JwtRegister() {
                 validationSchema={validationSchema}>
                 {({ values, errors, touched, handleChange, handleBlur, handleSubmit }) => (
                   <form onSubmit={handleSubmit}>
-                     <h2 style={{marginBottom:'20px', textAlign:'center', textDecoration:'underline', fontWeight:'bold', color:'darkblue'}}>Vendor Register</h2>
+                    <h2 style={{marginBottom:'20px', textAlign:'center', textDecoration:'underline', fontWeight:'bold', color:'darkblue'}}>Vendor Register</h2>
                    
                     <TextField
                       fullWidth
@@ -163,7 +163,6 @@ export default function JwtRegister() {
                       Register
                     </LoadingButton>
 
-                    
                     <Paragraph>
                       Already have an account?
                       <NavLink
@@ -172,14 +171,6 @@ export default function JwtRegister() {
                         Login
                       </NavLink>
                     </Paragraph>
-                    {/* <Paragraph>
-                      Vendor -
-                      <NavLink
-                        to="/vendor/signup"
-                        style={{ color: theme.palette.primary.main, marginLeft: 5 }}>
-                        Register
-                      </NavLink>
-                    </Paragraph> */}
                   </form>
                 )}
               </Formik>
