@@ -25,19 +25,7 @@ export default function Navbar() {
     alignItems: 'center',
     padding: '10px 20px',
     backgroundColor: '#fff',
-    color: '#fff',
     position: 'relative'
-  };
-
-  const hamburgerStyle = {
-    cursor: 'pointer',
-    width: '30px',
-    height: '30px',
-    backgroundColor: '#fff',
-    borderRadius: '5px',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center'
   };
 
   const logoStyle = {
@@ -50,31 +38,16 @@ export default function Navbar() {
     height: '50px'
   };
 
-  const menuStyle = {
-    position: 'fixed',
-    top: '60px',
-    left: '-300px',
-    width: '300px',
-    height: '100%',
-    backgroundColor: '#333',
-    transition: 'left 0.3s ease-in-out',
-    zIndex: 1,
-    display: showNav ? 'block' : 'none'
-  };
-
-  const innerNavStyle = {
-    listStyleType: 'none',
-    padding: '0',
-    margin: '0',
-    display: 'flex',
-    flexDirection: 'column',
-    paddingTop: '20px'
-  };
 
   const buttonStyle = {
     display: 'flex',
     alignItems: 'center',
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
+    // Mobile styles
+    '@media (max-width: 768px)': {
+      flexDirection: 'column',
+      alignItems: 'flex-start',
+    }
   };
 
   const navLinkStyle = {
@@ -83,26 +56,21 @@ export default function Navbar() {
     textDecoration: 'none',
     backgroundColor: '#0e2a47',
     borderRadius: '5px',
-    margin: '5px 10px'
+    margin: '5px 10px',
+    // Mobile styles
+    '@media (max-width: 768px)': {
+      margin: '10px 0',
+    }
   };
 
   return (
     <div className="navbar" style={navbarStyle}>
-     
       <div className="logo" style={logoStyle}>
-        <img src="https://i-cdn.apsgo.com/cdn/ixIr4Z6kjFikqy9QhPW73k3UW79bxY0sqbhUJikM.webp" style={imgStyle} alt="" />      
-        <nav className="menu" style={menuStyle}>
-          <ul className="inner-nav" style={innerNavStyle}>
-            {/* <li><a href="#hub">Hub</a></li>
-                <li><a href="#mint">Mint</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#socials">Socials</a></li> */}
-          </ul>
-        </nav>
+        <img src="https://i-cdn.apsgo.com/cdn/ixIr4Z6kjFikqy9QhPW73k3UW79bxY0sqbhUJikM.webp" style={imgStyle} alt="Logo" />
       </div>
       <div className="button" style={buttonStyle}>
         <NavLink to="/session/VendorSignup" style={navLinkStyle}>Joining as a Vendor?</NavLink>
-        <NavLink to="/session/UserSignup" style={navLinkStyle}>Joining as a User?  </NavLink>
+        <NavLink to="/session/UserSignup" style={navLinkStyle}>Joining as a User?</NavLink>
       </div>
     </div>
   );

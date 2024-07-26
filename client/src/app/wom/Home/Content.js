@@ -1,9 +1,6 @@
 import { useState } from 'react';
-import { FormControl, Grid, MenuItem, Select, Stack } from '@mui/material';
+import { FormControl, Grid, MenuItem, Select, Stack, Typography, Box } from '@mui/material';
 import { NavLink } from 'react-router-dom';
-
-// project-imports
-// import MainCard from './MainCard';
 
 export default function Content() {
   const [year, setYear] = useState('');
@@ -21,26 +18,33 @@ export default function Content() {
   };
 
   return (
-    <div style={{ padding: '10px' }}>
-      <div className='container' style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        <div className='text' style={{ border: '4px solid black', padding: '20px', borderRadius: '10px', boxShadow: '5px 3px', maxWidth: '600px', width: '100%' }}>
-          <h4 style={{ textAlign: 'center', fontWeight: '650' }}>Recycle Engine Market</h4>
-          <hr style={{ marginTop: '3px' }} />
-          <Grid container spacing={2.5} style={{ marginTop: '2px' }}>
-            <Grid item xs={12}>
-              <Stack spacing={1}>
+    <Box p={2}>
+      <Grid container spacing={2} justifyContent="center">
+        <Grid item xs={12} md={6}>
+          <Box
+            border={4}
+            borderColor="black"
+            p={4}
+            borderRadius={2}
+            boxShadow={3}
+            textAlign="center"
+          >
+            <Typography variant="h4" fontWeight={650}>
+              Recycle Engine Market
+            </Typography>
+            <hr style={{ margin: '8px 0' }} />
+            <Grid container spacing={2.5}>
+              <Grid item xs={12}>
                 <FormControl fullWidth>
                   <Select
-                    labelId="demo-simple-select-label"
                     displayEmpty
-                    id="demo-simple-select"
                     value={year}
                     onChange={handleChange}
-                    sx={{ backgroundColor: 'white' }}
                   >
                     <MenuItem disabled value="" sx={{ color: 'text.secondary' }}>
                       Select Year
                     </MenuItem>
+
                     <MenuItem value={2024}>2024</MenuItem>
                     <MenuItem value={2023}>2023</MenuItem>
                     <MenuItem value={2022}>2022</MenuItem>
@@ -58,18 +62,13 @@ export default function Content() {
                     <MenuItem value={2010}>2010</MenuItem>
                   </Select>
                 </FormControl>
-              </Stack>
-            </Grid>
-            <Grid item xs={12}>
-              <Stack spacing={1}>
+              </Grid>
+              <Grid item xs={12}>
                 <FormControl fullWidth>
                   <Select
-                    labelId="demo-simple-select-label"
                     displayEmpty
-                    id="demo-simple-select"
                     value={make}
                     onChange={handleChange2}
-                    sx={{ backgroundColor: 'white' }}
                   >
                     <MenuItem disabled value="" sx={{ color: 'text.secondary' }}>
                       Select Make
@@ -83,18 +82,13 @@ export default function Content() {
                     <MenuItem value={"Ford"}>Ford</MenuItem>
                   </Select>
                 </FormControl>
-              </Stack>
-            </Grid>
-            <Grid item xs={12}>
-              <Stack spacing={1}>
+              </Grid>
+              <Grid item xs={12}>
                 <FormControl fullWidth>
                   <Select
-                    labelId="demo-simple-select-label"
                     displayEmpty
-                    id="demo-simple-select"
                     value={model}
                     onChange={handleChange1}
-                    sx={{ backgroundColor: 'white' }}
                   >
                     <MenuItem disabled value="" sx={{ color: 'text.secondary' }}>
                       Select Model
@@ -116,46 +110,46 @@ export default function Content() {
                     <MenuItem value={"RS3"}>RS3</MenuItem>
                   </Select>
                 </FormControl>
-              </Stack>
+              </Grid>
+              <Grid item xs={12}>
+                <Box
+                  sx={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    fontStyle: 'italic',
+                    fontWeight: 'bold',
+                    fontSize: 16,
+                    backgroundColor: '#0e2a47',
+                    border: '2px solid #0e2a47',
+                    padding: 1,
+                    borderRadius: 2,
+                    color: '#fff',
+                    width: '50%', // Adjust the width as needed
+                    mx: 'auto' // Centers the box horizontally
+                  }}
+                >
+                  <NavLink to="/partinformation" style={{ color: '#fff', textDecoration: 'none', width: '100%', textAlign: 'center' }}>
+                    Submit
+                  </NavLink>
+                </Box>
+              </Grid>
             </Grid>
-            <Grid item xs={12}>
-              <div className="button" style={{
-                fontStyle: "italic",
-                fontWeight: "bold",
-                fontSize: "16px",
-                backgroundColor: "#0e2a47",
-                border: "2px solid #0e2a47",
-                padding: "10px",
-                borderRadius: "10px",
-                color: "#fff",
-                textAlign: 'center'
-              }}>
-                <NavLink to="/partinformation" style={{ color: '#fff', textDecoration: 'none' }}>Submit</NavLink>
-              </div>
-            </Grid>
-          </Grid>
-        </div>
-        <div className='image' style={{ marginTop: '20px', width: '100%', display: 'flex', justifyContent: 'center' }}>
-          <img style={{ maxWidth: "100%", borderRadius: '10px' }} src="https://car-images.bauersecure.com/wp-images/2434/03-ford-mustang.jpg" alt="" />
-        </div>
-      </div>
-      <div className='partners' style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', marginTop: '20px' }}>
-        <span style={{ margin: '10px' }}>
-          <img src="https://logohistory.net/wp-content/uploads/2023/01/Hyundai-Logo.png" alt="" style={{ maxWidth: '100px' }} />
-        </span>
-        <span style={{ margin: '10px' }}>
-          <img src="https://logohistory.net/wp-content/uploads/2023/01/Audi-Symbol-1536x864.png" alt="" style={{ maxWidth: '100px' }} />
-        </span>
-        <span style={{ margin: '10px' }}>
-          <img src="https://logohistory.net/wp-content/uploads/2023/01/Jaguar-Logo-2001-1536x864.png" alt="" style={{ maxWidth: '100px' }} />
-        </span>
-        <span style={{ margin: '10px' }}>
-          <img src="https://logohistory.net/wp-content/uploads/2023/01/BMW-Emblem-1536x864.png" alt="" style={{ maxWidth: '100px' }} />
-        </span>
-        <span style={{ margin: '10px' }}>
-          <img src="https://logohistory.net/wp-content/uploads/2023/01/Ford-Emblem-1536x864.png" alt="" style={{ maxWidth: '100px' }} />
-        </span>
-      </div>
-    </div>
+          </Box>
+        </Grid>
+        <Grid item xs={12} md={6} display="flex" justifyContent="center">
+          <img
+            src="https://car-images.bauersecure.com/wp-images/2434/03-ford-mustang.jpg"
+            alt=""
+            style={{ maxWidth: '100%', borderRadius: 10 }}
+          />
+        </Grid>
+        <Grid item xs={12} display="flex" justifyContent="space-around" flexWrap="wrap" mt={2}>
+          {['https://logohistory.net/wp-content/uploads/2023/01/Hyundai-Logo.png', 'https://logohistory.net/wp-content/uploads/2023/01/Audi-Symbol-1536x864.png', 'https://logohistory.net/wp-content/uploads/2023/01/Jaguar-Logo-2001-1536x864.png', 'https://logohistory.net/wp-content/uploads/2023/01/BMW-Emblem-1536x864.png', 'https://logohistory.net/wp-content/uploads/2023/01/Ford-Emblem-1536x864.png'].map((src, index) => (
+            <img key={index} src={src} alt="" style={{ maxWidth: '100px', margin: '0 10px', maxHeight: '50px' }} />
+          ))}
+        </Grid>
+      </Grid>
+    </Box>
   );
 }
