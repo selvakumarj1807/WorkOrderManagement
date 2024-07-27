@@ -69,7 +69,7 @@ export default function Navbar() {
         <img src="https://i-cdn.apsgo.com/cdn/ixIr4Z6kjFikqy9QhPW73k3UW79bxY0sqbhUJikM.webp" style={imgStyle} alt="Logo" />
       </div>
       <div className="button" style={buttonStyle}>
-        <NavLink to="/session/VendorSignup" style={navLinkStyle}>Joining as a Vendor?</NavLink>
+        <NavLink to="https://work-order-manage-vendor.vercel.app/" style={navLinkStyle}>Joining as a Vendor?</NavLink>
         <NavLink to="/session/UserSignup" style={navLinkStyle}>Joining as a User?</NavLink>
       </div>
     </div>
