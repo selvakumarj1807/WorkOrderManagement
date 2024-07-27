@@ -129,7 +129,7 @@ const PartInformation = () => {
                 <Box sx={{ height: '20vh', p: 2, backgroundColor: 'rgba(46, 46, 46, 0.8)', color: '#fff' }}>
                   <Typography variant="h6" align="center">Do you want to Register as a User?</Typography>
                   <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, mt: 2 }}>
-                    <Button component={Link} to="/session/signup" sx={buttonStyle}>
+                    <Button component={Link} to="/session/UserSignin" sx={buttonStyle}>
                       Yes
                     </Button>
                     <Popup
