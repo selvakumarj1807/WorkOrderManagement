@@ -99,17 +99,18 @@ function RequiredInformation() {
       <section className="dashboard section">
         <div className="row" style={{ marginInline: "20%" }}>
           <div className="col-lg-12 form">
+            <h3
+              style={{
+                borderRadius: "5px",
+                width: "350px",
+                marginInline: "auto",
+                color: "#10375c",
+              }}
+            >
+              Part Information
+            </h3>
             <div className="flex">
-              <h3
-                style={{
-                  borderRadius: "5px",
-                  width: "350px",
-                  marginInline: "auto",
-                  color: "#10375c",
-                }}
-              >
-                Part Information
-              </h3>
+
               <div>
                 <ul>
                   <li>
@@ -272,7 +273,7 @@ function RequiredInformation() {
                       fontStyle: "italic",
                     }}
                   >
-                    Your Inquiery is accept Please wait for the replay... 
+                    Your Inquiery is accept Please wait for the replay...
                   </p>
                   <button style={{ marginTop: "5px" }}>
                     <Link

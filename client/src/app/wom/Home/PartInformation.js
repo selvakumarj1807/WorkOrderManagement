@@ -32,7 +32,7 @@ const PartInformation = () => {
     <Box className="home" sx={{ padding: { xs: 2, md: 4 } }}>
       <Navbar />
       <Box sx={{ border: '4px solid black', padding: 3, borderRadius: 1, boxShadow: 3, mt: 5, mx: { xs: 1, md: 5 } }}>
-        <Typography variant="h5" align="center" fontWeight="bold" sx={{ border: 1, p: 1 }}>Part Information</Typography>
+        <Typography variant="h5" align="center" fontWeight="bold" sx={{ border: 1, p: 1, mt: 2 }}>Part Information</Typography>
 
         <Grid container spacing={2} sx={{ mt: 2 }}>
           <Grid item xs={12} md={4}>
